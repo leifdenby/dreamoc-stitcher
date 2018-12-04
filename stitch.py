@@ -113,7 +113,7 @@ class DreamocImageSticher():
     def place_left_img(self, img, img_output):
         h, mask_L = self.h, self.mask_L
         img_ = self._center_image(img)
-        img_ = np.rot90(img_, axes=(1,0))[:,:h]
+        img_ = np.rot90(img_, axes=(1,0), k=1)[:,:h]
 
         # need to crop the mask before we apply it
         m = mask_L[:h]
@@ -123,15 +123,16 @@ class DreamocImageSticher():
 
 
     def place_right_img(self, img, img_output):
-        h, mask_R = self.h, self.mask_R
+        w, h, mask_R = self.w, self.h, self.mask_R
 
         img_ = self._center_image(img)
-        img_ = np.rot90(img_, axes=(1,0), k=1)[:,:h]
+
+        img_ = np.rot90(img_, axes=(1,0), k=-1)
+        w_ = img_.shape[0]
 
         img_temp = np.zeros_like(img_output)
-
-        img_temp[:h] = img_
-        img_temp = np.flip(img_temp, axis=0)
+        img_temp[:w_] = img_[:w_,:h]
+        img_temp = np.roll(img_temp, axis=0, shift=w-w_)
 
         img_output[mask_R] = img_temp[mask_R]
 
