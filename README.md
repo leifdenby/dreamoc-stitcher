@@ -13,3 +13,20 @@ Install requirements with pip
 Run
 
 > python stitch.py img_L.png img_C.png img_R.png
+
+## Example
+
+
+**input**
+
+<table>
+<tr>
+<td><img src='example_L.png' width=200 /></td>
+<td><img src='example_C.png' width=200 /></td>
+<td><img src='example_R.png' width=200 /></td>
+</tr>
+</table>
+
+**output**
+
+<img src='combined.png' width=200 />
