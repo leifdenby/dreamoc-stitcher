@@ -14,19 +14,38 @@ Run
 
 > python stitch.py img_L.png img_C.png img_R.png
 
-## Example
+## Examples
 
+
+### Mobius strip
 
 **input**
 
 <table>
 <tr>
-<td><img src='example_L.png' width=200 /></td>
-<td><img src='example_C.png' width=200 /></td>
-<td><img src='example_R.png' width=200 /></td>
+<td><img src='examples/mobius_L.png' width=200 /></td>
+<td><img src='examples/mobius_C.png' width=200 /></td>
+<td><img src='examples/mobius_R.png' width=200 /></td>
 </tr>
 </table>
 
 **output**
 
-<img src='combined.png' width=200 />
+<img src='examples/mobius_combined.png' width=200 />
+
+
+### Text strip
+
+**input**
+
+<table>
+<tr>
+<td><img src='examples/text_LEFT.png' width=200 /></td>
+<td><img src='examples/text_CENTER.png' width=200 /></td>
+<td><img src='examples/text_RIGHT.png' width=200 /></td>
+</tr>
+</table>
+
+**output**
+
+<img src='examples/text_combined.png' width=200 />

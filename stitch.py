@@ -81,6 +81,7 @@ class DreamocImageSticher():
 
     def _center_image(self, img):
         w, h = self.w, self.h
+
         w_in, h_in, n_colors = img.shape
         i_c_C, j_c_C = self.i_c_C, self.j_c_C
 
@@ -139,7 +140,8 @@ class DreamocImageSticher():
         return img_output
 
     def _read_img(self, fn):
-        return np.transpose(imageio.imread(fn), axes=(1,0,2))
+        # I prefer x-y indexing starting from bottom right corner
+        return np.flip(np.transpose(imageio.imread(fn), axes=(1,0,2)), axis=1)
 
     def __call__(self, fn_img_L, fn_img_R, fn_img_C):
         img_L = self._read_img(fn_img_L)

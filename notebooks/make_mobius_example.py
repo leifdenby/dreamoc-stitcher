@@ -2,6 +2,8 @@
 matplotlib example used to create example left, center and right examples
 images for Dreamoc image stichting
 '''
+import matplotlib
+matplotlib.use("Agg")
 
 import numpy as np
 import matplotlib.pyplot as plt
@@ -40,15 +42,9 @@ ax.set_zlim(-1, 1)
 
 ax._axis3don = False
 
-sticher = stich.DreamocImageSticher()
-
 # plt.show()
 angle = 0
 for name, d_angle in [("L", -90), ("C", 0), ("R", 90)]:
     ax.view_init(30, angle + d_angle)
-    fn = 'example_{}.png'.format(name)
+    fn = '../examples/mobius_{}.png'.format(name)
     plt.savefig(fn)
-    # plt.draw()
-        # plt.pause(.001)
-
-
