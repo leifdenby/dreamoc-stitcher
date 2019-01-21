@@ -1,7 +1,7 @@
 # Dreamoc image stitcher
 
 This utility facilitates stitching three images together (the intention is
-these will be the left, center and right-side view of a scene) together form
+these will be the left, center and right-side view of a scene) together to form
 a single image to be shown on the Dreamoc.
 
 ## Installation and usage
